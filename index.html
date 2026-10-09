@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nann Oo Hlaing — Portfolio</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate900: '#0b0f19',
+                        slate800: '#111827',
+                        gold: '#d4af37',
+                        goldLight: '#f3e5ab',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(17, 24, 39, 0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.45);
+            box-shadow: 0 15px 40px -15px rgba(212, 175, 55, .2);
+            transform: translateY(-3px);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 30%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 30px -8px rgba(212, 175, 55, .35);
+        }
+
+        .floating-glow {
+            animation: floatingGlow 7s ease-in-out infinite;
+        }
+
+        @keyframes floatingGlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-image {
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        ::selection {
+            background: #d4af37;
+            color: #0b0f19;
+        }
+    </style>
+</head>
+
+<body class="bg-slate900 text-gray-100">
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate900/85 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#hero" class="text-xl font-serif font-bold tracking-wider text-gradient">
+            Nann Oo Hlaing
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+            <a href="#about" class="hover:text-gold transition-colors">About</a>
+            <a href="#education" class="hover:text-gold transition-colors">Education</a>
+            <a href="#projects" class="hover:text-gold transition-colors">Research & Projects</a>
+            <a href="#skills" class="hover:text-gold transition-colors">Skills & Languages</a>
+            <a href="#contact" class="px-4 py-2 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-slate900 transition-all duration-300">Contact</a>
+        </nav>
+
+        <button id="menu-btn" class="md:hidden text-gray-300 hover:text-gold focus:outline-none">
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-slate900/95 border-b border-gray-800 px-6 py-6 space-y-4">
+        <a href="#about" class="block text-gray-300 hover:text-gold">About</a>
+        <a href="#education" class="block text-gray-300 hover:text-gold">Education</a>
+        <a href="#projects" class="block text-gray-300 hover:text-gold">Research & Projects</a>
+        <a href="#skills" class="block text-gray-300 hover:text-gold">Skills & Languages</a>
+        <a href="#contact" class="inline-block px-5 py-2 rounded-full border border-gold/40 text-gold hover:bg-gold hover:text-slate900 transition-all">Contact</a>
+    </div>
+</header>
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 pb-16 px-6 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-gold rounded-full filter blur-[120px] floating-glow"></div>
+        <div class="absolute top-1/2 -right-40 w-96 h-96 bg-blue-600 rounded-full filter blur-[150px]"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+
+        <div class="md:col-span-7 space-y-6 text-center md:text-left fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-wide uppercase">
+                <i class="fa-solid fa-shield-halved"></i>
+                Computer Science & Cybersecurity
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight">
+                Hello, I'm<br>
+                <span class="text-gradient">Nann Oo Hlaing</span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-gray-300 font-light max-w-xl">
+                Master's Student specializing in advanced software engineering,
+                cyber-physical systems, and digital signal processing.
+            </p>
+
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-400 pt-2">
+                <a href="tel:+9112864816" class="flex items-center gap-2 hover:text-gold transition-colors bg-slate800/80 px-4 py-2 rounded-lg border border-gray-800">
+                    <i class="fa-solid fa-phone text-gold"></i> +9112864816
+                </a>
+
+                <a href="mailto:nannoohlaing1@gmail.com" class="flex items-center gap-2 hover:text-gold transition-colors bg-slate800/80 px-4 py-2 rounded-lg border border-gray-800">
+                    <i class="fa-solid fa-envelope text-gold"></i> nannoohlaing1@gmail.com
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                <a href="#projects" class="px-7 py-3 rounded-xl bg-gold text-slate900 font-semibold hover:bg-goldLight transition-all duration-300 gold-glow">
+                    Explore My Work
+                </a>
+                <a href="#contact" class="px-7 py-3 rounded-xl border border-gray-700 hover:border-gold text-gray-200 transition-all duration-300">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+
+        <!-- PROFILE PHOTO -->
+        <div class="md:col-span-5 flex justify-center fade-in">
+            <div class="relative w-72 h-96 sm:w-80 sm:h-[420px] rounded-2xl p-2 glass-card gold-glow group">
+                <div class="w-full h-full rounded-xl overflow-hidden bg-slate800 relative">
+
+                    <img
+                        src="https://yt3.ggpht.com/oIuaBEa6GOcLNroUbauXL5LXms4YjXkaeSgmIYp8seaiMFPLvVbjsYPrry30UPioJwxFuPJBswWRveY=s640-rw-nd-v1"
+                        alt="Nann Oo Hlaing"
+                        class="profile-image w-full h-full transition-transform duration-700 group-hover:scale-105"
+                    >
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent pointer-events-none"></div>
+
+                    <div class="absolute bottom-4 left-4 right-4 bg-slate900/85 backdrop-blur-md p-4 rounded-xl border border-gold/30 text-center">
+                        <p class="text-sm font-semibold text-gold tracking-widest uppercase">
+                            Master's Scholar
+                        </p>
+                        <p class="text-sm text-gray-200 mt-1">
+                            SPbPU, Russia
+                        </p>
+                    </div>
+                </div>
+
+                <div class="absolute -inset-1 rounded-2xl border border-gold/20 pointer-events-none"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="py-24 px-6 bg-slate800/40 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gradient">About Me & Overview</h2>
+            <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            <p class="text-gray-400 text-sm sm:text-base">
+                Passionate about cutting-edge technology, system security, and signal processing.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl space-y-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl border border-gold/20">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white">Academic Focus</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Currently pursuing a Master's degree at Peter the Great St. Petersburg Polytechnic University focusing on advanced computer science and cybersecurity principles.
+                </p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl space-y-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl border border-gold/20">
+                    <i class="fa-solid fa-radio"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white">Professional Interests</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Deeply engaged in software development, SDR technologies, radio signal detection and analysis, digital signal processing, and cyber-physical systems.
+                </p>
+            </div>
+
+            <div class="glass-card p-8 rounded-2xl space-y-4">
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl border border-gold/20">
+                    <i class="fa-solid fa-chess-queen"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white">Leadership & Vision</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Equipped with strong management and leadership competencies, aiming to bridge theoretical research and practical software engineering implementations.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gradient">Education Journey</h2>
+            <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            <p class="text-gray-400 text-sm sm:text-base">Academic milestones and institutions.</p>
+        </div>
+
+        <div class="relative border-l border-gold/30 ml-4 md:ml-32 space-y-12">
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate900 border-2 border-gold flex items-center justify-center text-gold text-xs shadow-lg">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-2">
+                    <span class="inline-block px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold">
+                        2026 — Present
+                    </span>
+
+                    <h3 class="text-xl font-bold text-white">
+                        Master's Program in Computer Science & Cybersecurity
+                    </h3>
+
+                    <p class="text-gold text-sm font-medium">
+                        Peter the Great St. Petersburg Polytechnic University (SPbPU), Saint Petersburg
+                    </p>
+
+                    <p class="text-gray-400 text-xs">
+                        Institute of Computer Science and Cybersecurity • Group: 5142704/60802
+                    </p>
+
+                    <p class="text-gray-300 text-sm pt-2">
+                        Advanced studies in software security, digital systems, and cyber-physical engineering.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate900 border-2 border-gray-600 flex items-center justify-center text-gray-400 text-xs shadow-lg">
+                    <i class="fa-solid fa-university"></i>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-2">
+                    <span class="inline-block px-3 py-1 rounded-full bg-gray-800 text-gray-300 text-xs font-semibold">
+                        Graduated 2022
+                    </span>
+
+                    <h3 class="text-xl font-bold text-white">
+                        Bachelor's Degree in Computer Technology
+                    </h3>
+
+                    <p class="text-gold text-sm font-medium">
+                        Defense Services Academy, Myanmar
+                    </p>
+
+                    <p class="text-gray-300 text-sm pt-2">
+                        Foundational rigorous training in computer science, software development, and systems engineering.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="py-24 px-6 bg-slate800/40 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gradient">
+                Research & Academic Project
+            </h2>
+            <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+            <p class="text-gray-400 text-sm sm:text-base">
+                Highlighting my master's research initiative and system development.
+            </p>
+        </div>
+
+        <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full filter blur-3xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/30 text-gold text-xs font-semibold">
+                        <i class="fa-solid fa-flask"></i>
+                        Master's Research Project
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-serif font-bold text-white leading-snug">
+                        Mobile Learning System for Evaluating an English Language Course Based on the Analytic Hierarchy Process (AHP) Method
+                    </h3>
+
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                        Research and development of an intelligent mobile learning platform designed to systematically evaluate and optimize English language curriculum effectiveness. By integrating the Analytic Hierarchy Process (AHP), the system accurately weighs multiple decision criteria to deliver precise educational assessments.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <span class="px-3 py-1 rounded-lg bg-slate900 border border-gray-800 text-xs text-gold">Mobile Learning</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate900 border border-gray-800 text-xs text-gold">AHP Method</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate900 border border-gray-800 text-xs text-gold">Course Evaluation</span>
+                        <span class="px-3 py-1 rounded-lg bg-slate900 border border-gray-800 text-xs text-gold">Software Development</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 flex flex-col justify-center items-center bg-slate900/60 p-6 rounded-2xl border border-gray-800 text-center space-y-4">
+                    <div class="w-16 h-16 rounded-full bg-gold/10 text-gold flex items-center justify-center text-2xl border border-gold/30">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+
+                    <h4 class="font-semibold text-white">System Architecture</h4>
+
+                    <p class="text-xs text-gray-400">
+                        Combining mobile app usability with multi-criteria decision-making algorithms for enhanced language proficiency assessment.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+        <div class="space-y-8">
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-gradient mb-2">Technical Skills</h2>
+                <p class="text-gray-400 text-sm">Core programming and system proficiencies.</p>
+            </div>
+
+            <div class="space-y-6">
+
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-white flex items-center gap-2">
+                            <i class="fa-brands fa-python text-gold"></i> Python
+                        </span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-gold/10 text-gold border border-gold/20">Basic Level</span>
+                    </div>
+
+                    <div class="w-full bg-slate800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gold h-full rounded-full" style="width:45%;"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-code text-gold"></i> C++
+                        </span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-gold/10 text-gold border border-gold/20">Basic Level</span>
+                    </div>
+
+                    <div class="w-full bg-slate800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gold h-full rounded-full" style="width:40%;"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-users-gear text-gold"></i>
+                            Software Dev & Management
+                        </span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-gold/10 text-gold border border-gold/20">Proficient</span>
+                    </div>
+
+                    <div class="w-full bg-slate800 h-2 rounded-full overflow-hidden">
+                        <div class="bg-gold h-full rounded-full" style="width:75%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="space-y-8">
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-gradient mb-2">Languages</h2>
+                <p class="text-gray-400 text-sm">Multilingual communication abilities.</p>
+            </div>
+
+            <div class="space-y-6">
+
+                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold border border-gold/20">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Myanmar</h4>
+                            <p class="text-xs text-gray-400">Native proficiency</p>
+                        </div>
+                    </div>
+
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30">
+                        Native
+                    </span>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold border border-gold/20">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">English</h4>
+                            <p class="text-xs text-gray-400">Professional working proficiency</p>
+                        </div>
+                    </div>
+
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30">
+                        Intermediate
+                    </span>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold border border-gold/20">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white">Russian</h4>
+                            <p class="text-xs text-gray-400">Academic & technical comprehension</p>
+                        </div>
+                    </div>
+
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gold/15 text-gold border border-gold/30">
+                        Understanding
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact" class="py-24 px-6 bg-slate800/40 border-t border-gray-800">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+
+        <div class="space-y-3">
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-gradient">
+                Let's Connect
+            </h2>
+
+            <div class="w-16 h-1 bg-gold mx-auto rounded-full"></div>
+
+            <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
+                Interested in discussing software development, cybersecurity,
+                or collaborative research? Reach out directly.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+
+            <a href="mailto:nannoohlaing1@gmail.com"
+               class="glass-card p-6 rounded-2xl flex items-center gap-4 group">
+
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl border border-gold/20 group-hover:bg-gold group-hover:text-slate900 transition-all">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+
+                <div class="text-left">
+                    <p class="text-xs text-gray-400">Email Me</p>
+                    <p class="text-sm font-semibold text-white truncate max-w-[200px]">
+                        nannoohlaing1@gmail.com
+                    </p>
+                </div>
+            </a>
+
+            <a href="tel:+9112864816"
+               class="glass-card p-6 rounded-2xl flex items-center gap-4 group">
+
+                <div class="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold text-xl border border-gold/20 group-hover:bg-gold group-hover:text-slate900 transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div class="text-left">
+                    <p class="text-xs text-gray-400">Call Me</p>
+                    <p class="text-sm font-semibold text-white">
+                        +9112864816
+                    </p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<footer class="py-8 px-6 bg-slate900 border-t border-gray-800 text-center text-gray-500 text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 Nann Oo Hlaing. All rights reserved.</p>
+        <p>Master's Student • Peter the Great St. Petersburg Polytechnic University</p>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
+
+</body>
+</html>
